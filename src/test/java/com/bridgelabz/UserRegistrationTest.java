@@ -45,18 +45,32 @@ public class UserRegistrationTest {
 		boolean result = userValidator.emailValidator("abc(*1@gmail.com");
 		Assert.assertFalse(result);
 	}
-	 @Test
-	    public void givenPhoneNumber_WhenValid_ShouldReturnTrue() {
-	        UserRegistration userValidator = new UserRegistration();
-	        boolean result = userValidator.phoneNumberValidator("919146954656");
-	        Assert.assertTrue(result);
-	    }
 
-	    @Test
-	    public void givenPhoneNumber_WhenInvalid_ShouldReturnFalse() {
-	        UserRegistration userValidator = new UserRegistration();
-	        boolean result = userValidator.phoneNumberValidator("9825236");
-	        Assert.assertFalse(result);
-	    }
-	
+	@Test
+	public void givenPhoneNumber_WhenValid_ShouldReturnTrue() {
+		UserRegistration userValidator = new UserRegistration();
+		boolean result = userValidator.phoneNumberValidator("919146954656");
+		Assert.assertTrue(result);
+	}
+
+	@Test
+	public void givenPhoneNumber_WhenInvalid_ShouldReturnFalse() {
+		UserRegistration userValidator = new UserRegistration();
+		boolean result = userValidator.phoneNumberValidator("9825236");
+		Assert.assertFalse(result);
+	}
+
+	@Test
+	public void givenPassword_WhenValid_ShouldReturnTrue() {
+		UserRegistration userValidator = new UserRegistration();
+		boolean result = userValidator.passwordValidator("Umadevi@123");
+		Assert.assertTrue(result);
+	}
+
+	@Test
+	public void givenPassword_WhenInvalid_ShouldReturnTrue() {
+		UserRegistration userValidator = new UserRegistration();
+		boolean result = userValidator.passwordValidator("Uma@#$12");
+		Assert.assertFalse(result);
+	}
 }
