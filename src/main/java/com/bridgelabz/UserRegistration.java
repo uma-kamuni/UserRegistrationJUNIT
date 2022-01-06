@@ -7,6 +7,7 @@ public class UserRegistration {
 	    String firstName;
 	    String lastName;
 	    String email;
+	    String phoneNumber;
 
 	    //name validation
 	    public boolean FirstNameValidate(String firstName) {
@@ -50,6 +51,19 @@ public class UserRegistration {
 	        }
 	    }	    
 	    
+	  //phone number validation
+	    public boolean phoneNumberValidator(String phoneNumber) {
+	        String pattern="^\\+?([0-9]{2})\\)?([0-9]{10})$";
+
+	        if (phoneNumber.matches(pattern)) {
+	            System.out.println("valid phone number");
+	            return true;
+	        }
+	        else {
+	            System.out.println("Invalid phone number");
+	            return false;
+	        }
+	    }
 
 	    
 	    //methods
@@ -80,6 +94,16 @@ public class UserRegistration {
 	            userEmail();
 	        }
 	    }
+	    
+	    public void userPhoneNumber(){
+	        System.out.println("Enter the phone number:");
+	        phoneNumber = scanner.next();
+	        boolean result = phoneNumberValidator(phoneNumber);
+	        if ( result == false) {
+	            userPhoneNumber();
+	        }
+	    }
+
 
 
 	    //main method
@@ -90,5 +114,6 @@ public class UserRegistration {
 	        user.userFirstName();
 	        user.userLastName();
 	        user.userEmail();
+	        user.userPhoneNumber();
 	    }
 	}
