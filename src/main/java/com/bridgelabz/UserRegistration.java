@@ -64,7 +64,7 @@ public class UserRegistration {
 
 	// password validation
 	public boolean passwordValidator(String password) {
-		String pattern ="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$";
+		String pattern ="^(?=.*[A-Z0-9a-z])(?=.*[!@#$%^&*();]{1}).{8,}$";
 		if (password.matches(pattern)) {
 			System.out.println("valid password");
 			return true;
