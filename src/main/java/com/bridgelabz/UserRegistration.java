@@ -127,6 +127,7 @@ public class UserRegistration {
 		System.out.println("Welcome to user registration");
 
 		UserRegistration user = new UserRegistration();
+		
 		user.userFirstName();
 		user.userLastName();
 		user.userEmail();
