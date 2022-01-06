@@ -14,7 +14,7 @@ public class UserRegistrationTest {
 	@Test
 	public void givenFirstName_WhenInvalid_ShouldReturnFalse() {
 		UserRegistration userValidator = new UserRegistration();
-		boolean result = userValidator.FirstNameValidate("Uma");
+		boolean result = userValidator.FirstNameValidate("umadevi");
 		Assert.assertFalse(result);
 	}
 
@@ -28,7 +28,7 @@ public class UserRegistrationTest {
 	@Test
 	public void givenLastName_WhenInvalid_ShouldReturnFalse() {
 		UserRegistration userValidator = new UserRegistration();
-		boolean result = userValidator.LastNameValidate("Kam");
+		boolean result = userValidator.LastNameValidate("kam");
 		Assert.assertFalse(result);
 	}
 

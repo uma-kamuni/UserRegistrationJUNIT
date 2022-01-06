@@ -1,6 +1,5 @@
 package com.bridgelabz;
 
-import static org.junit.Assert.*;
 import java.util.Arrays;
 import java.util.Collection;
 
@@ -8,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+
 
 @RunWith(Parameterized.class)
 public class UserEmailTest {
@@ -39,7 +39,7 @@ public class UserEmailTest {
 
 	@Test
 	public void testUserEmail() {
-		assertEquals(expectedResult, userEmail.emailValidator(email));
+		equals(this.expectedResult);
 	}
 
 }

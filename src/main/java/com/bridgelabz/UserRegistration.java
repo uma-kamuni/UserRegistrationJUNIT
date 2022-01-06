@@ -64,7 +64,7 @@ public class UserRegistration {
 
 	// password validation
 	public boolean passwordValidator(String password) {
-		String pattern ="^(?=.*[A-Z0-9a-z])(?=.*[!@#$%^&*();]{1}).{8,}$";
+		String pattern = "^(?=.*[A-Z0-9a-z])(?=.*[!@#$%^&*();]{1}).{8,}$";
 		if (password.matches(pattern)) {
 			System.out.println("valid password");
 			return true;
@@ -109,6 +109,7 @@ public class UserRegistration {
 		boolean result = phoneNumberValidator(phoneNumber);
 		if (result == false) {
 			userPhoneNumber();
+			
 		}
 	}
 
@@ -127,7 +128,7 @@ public class UserRegistration {
 		System.out.println("Welcome to user registration");
 
 		UserRegistration user = new UserRegistration();
-		
+
 		user.userFirstName();
 		user.userLastName();
 		user.userEmail();
