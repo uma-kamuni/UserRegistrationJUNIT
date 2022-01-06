@@ -8,6 +8,7 @@ public class UserRegistration {
 	    String lastName;
 	    String email;
 	    String phoneNumber;
+	    String password;
 
 	    //name validation
 	    public boolean FirstNameValidate(String firstName) {
@@ -65,6 +66,19 @@ public class UserRegistration {
 	        }
 	    }
 
+	    //password validation
+	    public boolean passwordValidator(String password) {
+	        String pattern="^[A-Za-z]{8}$";
+
+	        if (password.matches(pattern)) {
+	            System.out.println("valid password");
+	            return true;
+	        }
+	        else {
+	            System.out.println("Invalid password");
+	            return false;
+	        }
+	    }
 	    
 	    //methods
 	    
@@ -103,7 +117,15 @@ public class UserRegistration {
 	            userPhoneNumber();
 	        }
 	    }
+	    public void userPassword(){
+	        System.out.println("Enter the password:");
+	        password = scanner.next();
+	        boolean result = passwordValidator(password);
+	        if ( result == false) {
+	            userPassword();
+	        }
 
+	    }
 
 
 	    //main method
@@ -115,5 +137,6 @@ public class UserRegistration {
 	        user.userLastName();
 	        user.userEmail();
 	        user.userPhoneNumber();
+	        user.userPassword();
 	    }
 	}
