@@ -31,4 +31,18 @@ public class UserRegistrationTest {
 		boolean result = userValidator.LastNameValidate("Kam");
 		Assert.assertFalse(result);
 	}
+
+	@Test
+	public void givenEmailAddress_WhenValid_ShouldReturnTrue() {
+		UserRegistration userValidator = new UserRegistration();
+		boolean result = userValidator.emailValidator("kamuniumaramesh@gmail.com");
+		Assert.assertTrue(result);
+	}
+
+	@Test
+	public void givenEmailAddress_WhenInvalid_ShouldReturnTrue() {
+		UserRegistration userValidator = new UserRegistration();
+		boolean result = userValidator.emailValidator("abc(*1@gmail.com");
+		Assert.assertFalse(result);
+	}
 }

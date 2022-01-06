@@ -6,6 +6,7 @@ public class UserRegistration {
 	Scanner scanner = new Scanner(System.in);
 	    String firstName;
 	    String lastName;
+	    String email;
 
 	    //name validation
 	    public boolean FirstNameValidate(String firstName) {
@@ -34,7 +35,22 @@ public class UserRegistration {
 	            return false;
 	        }
 	    }
+
+	    //email validation
+	    public boolean emailValidator(String email) {
+	        String pattern = "^[0-9a-zA-Z]+([.\\-+]?[a-zA-Z0-9]+)?\\@[0-9a-zA-Z]+.[a-zA-Z]{2,4}(.[a-zA-Z]{2,})*$";
+
+	        if (email.matches(pattern)) {
+	            System.out.println("valid email id");
+	            return true;
+	        }
+	        else {
+	            System.out.println("Invalid email id");
+	            return false;
+	        }
+	    }	    
 	    
+
 	    
 	    //methods
 	    
@@ -55,6 +71,15 @@ public class UserRegistration {
 	            userLastName();
 	        }
 	    }
+	    
+	    public void userEmail(){
+	        System.out.println("Enter the email id :");
+	        email = scanner.next();
+	        boolean result = emailValidator(email);
+	        if ( result == false) {
+	            userEmail();
+	        }
+	    }
 
 
 	    //main method
@@ -64,5 +89,6 @@ public class UserRegistration {
 	        UserRegistration user = new UserRegistration();
 	        user.userFirstName();
 	        user.userLastName();
+	        user.userEmail();
 	    }
 	}
