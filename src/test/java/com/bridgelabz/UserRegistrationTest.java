@@ -70,7 +70,7 @@ public class UserRegistrationTest {
 	@Test
 	public void givenPassword_WhenInvalid_ShouldReturnTrue() {
 		UserRegistration userValidator = new UserRegistration();
-		boolean result = userValidator.passwordValidator("Uma@#$12");
+		boolean result = userValidator.passwordValidator("umaa");
 		Assert.assertFalse(result);
 	}
 }
