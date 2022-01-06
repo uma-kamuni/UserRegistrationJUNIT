@@ -1,9 +1,20 @@
 package com.bridgelabz;
 
-public class UserRegistrationTest {
+import org.junit.Assert;
+import org.junit.Test;
 
-	public static void main(String[] args) {
-   System.out.println("Welcome To Regex Using JUNIT Testing");
+public class UserRegistrationTest {
+	@Test
+	public void givenFirstName_WhenValid_ShouldReturnTrue() {
+		UserRegistration userValidator = new UserRegistration();
+		boolean result = userValidator.FirstNameValidate("Umadevi");
+		Assert.assertTrue(result);
 	}
 
+	@Test
+	public void givenFirstName_WhenInvalid_ShouldReturnFalse() {
+		UserRegistration userValidator = new UserRegistration();
+		boolean result = userValidator.FirstNameValidate("Uma");
+		Assert.assertFalse(result);
+	}
 }
