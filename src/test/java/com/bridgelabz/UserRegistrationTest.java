@@ -7,70 +7,96 @@ public class UserRegistrationTest {
 	@Test
 	public void givenFirstName_WhenValid_ShouldReturnTrue() {
 		UserRegistration userValidator = new UserRegistration();
-		boolean result = userValidator.FirstNameValidate("Umadevi");
-		Assert.assertTrue(result);
+		try {
+			Assert.assertTrue(userValidator.FirstNameValidate("Umadevi"));
+		} catch (UserRegistrationException e) {
+		}
 	}
 
 	@Test
 	public void givenFirstName_WhenInvalid_ShouldReturnFalse() {
 		UserRegistration userValidator = new UserRegistration();
-		boolean result = userValidator.FirstNameValidate("umadevi");
-		Assert.assertFalse(result);
+		try {
+			userValidator.FirstNameValidate("umadevi");
+		} catch (UserRegistrationException e) {
+			Assert.assertEquals("Please enter a valid first name", e.getMessage());
+		}
 	}
 
 	@Test
 	public void givenLastName_WhenValid_ShouldReturnTrue() {
 		UserRegistration userValidator = new UserRegistration();
-		boolean result = userValidator.LastNameValidate("Kamuni");
-		Assert.assertTrue(result);
+		try {
+			Assert.assertTrue(userValidator.LastNameValidate("Kamuni"));
+		} catch (UserRegistrationException e) {
+		}
 	}
 
 	@Test
 	public void givenLastName_WhenInvalid_ShouldReturnFalse() {
 		UserRegistration userValidator = new UserRegistration();
-		boolean result = userValidator.LastNameValidate("kam");
-		Assert.assertFalse(result);
+		try {
+			userValidator.LastNameValidate("kam");
+		} catch (UserRegistrationException e) {
+			Assert.assertEquals("Please enter a valid last name", e.getMessage());
+		}
 	}
 
 	@Test
 	public void givenEmailAddress_WhenValid_ShouldReturnTrue() {
 		UserRegistration userValidator = new UserRegistration();
-		boolean result = userValidator.emailValidator("kamuniumaramesh@gmail.com");
-		Assert.assertTrue(result);
+		try {
+			Assert.assertTrue(userValidator.emailValidator("kamuniumaramesh@gmail.com"));
+		} catch (UserRegistrationException e) {
+		}
 	}
 
 	@Test
 	public void givenEmailAddress_WhenInvalid_ShouldReturnTrue() {
 		UserRegistration userValidator = new UserRegistration();
-		boolean result = userValidator.emailValidator("abc(*1@gmail.com");
-		Assert.assertFalse(result);
+		try {
+			userValidator.emailValidator("abc()*@gmail.com");
+		} catch (UserRegistrationException e) {
+			Assert.assertEquals("Please enter a valid email id", e.getMessage());
+		}
 	}
 
 	@Test
 	public void givenPhoneNumber_WhenValid_ShouldReturnTrue() {
 		UserRegistration userValidator = new UserRegistration();
-		boolean result = userValidator.phoneNumberValidator("919146954656");
-		Assert.assertTrue(result);
+		try {
+			Assert.assertTrue(userValidator.phoneNumberValidator("919146954656"));
+		} catch (UserRegistrationException e) {
+		}
 	}
 
 	@Test
 	public void givenPhoneNumber_WhenInvalid_ShouldReturnFalse() {
 		UserRegistration userValidator = new UserRegistration();
-		boolean result = userValidator.phoneNumberValidator("9825236");
-		Assert.assertFalse(result);
+		try {
+			userValidator.phoneNumberValidator("9825236");
+		} catch (UserRegistrationException e) {
+			Assert.assertEquals("Please enter a valid phone number", e.getMessage());
+		}
 	}
 
 	@Test
 	public void givenPassword_WhenValid_ShouldReturnTrue() {
 		UserRegistration userValidator = new UserRegistration();
-		boolean result = userValidator.passwordValidator("Umadevi@123");
-		Assert.assertTrue(result);
+		try {
+			Assert.assertTrue(userValidator.passwordValidator("Umadevi@123"));
+		} catch (UserRegistrationException e) {
+		}
 	}
 
 	@Test
 	public void givenPassword_WhenInvalid_ShouldReturnTrue() {
 		UserRegistration userValidator = new UserRegistration();
-		boolean result = userValidator.passwordValidator("umaa11");
-		Assert.assertFalse(result);
+		try {
+			userValidator.passwordValidator("umaa11");
+		} catch (UserRegistrationException e) {
+			Assert.assertEquals("Please enter a valid password", e.getMessage());
+		}
 	}
+
 }

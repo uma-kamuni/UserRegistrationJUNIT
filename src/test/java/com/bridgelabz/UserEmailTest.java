@@ -1,5 +1,7 @@
 package com.bridgelabz;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.Arrays;
 import java.util.Collection;
 
@@ -39,7 +41,10 @@ public class UserEmailTest {
 
 	@Test
 	public void testUserEmail() {
-		equals(this.expectedResult);
+		try {
+			assertEquals(expectedResult,userEmail.emailValidator(email));
+		} catch (UserRegistrationException e) {
+		}
 	}
 
 }
